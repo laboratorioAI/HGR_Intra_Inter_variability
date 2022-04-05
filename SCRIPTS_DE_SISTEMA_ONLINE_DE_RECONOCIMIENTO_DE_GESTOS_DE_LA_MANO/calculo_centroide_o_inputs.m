@@ -1,0 +1,137 @@
+function [FI1,FI2,FI3,FI4,FI5,FI6,FI7,FI8,...
+          WI1,WI2,WI3,WI4,WI5,WI6,WI7,WI8,...
+          WO1,WO2,WO3,WO4,WO5,WO6,WO7,WO8,...
+          OP1,OP2,OP3,OP4,OP5,OP6,OP7,OP8,...
+          PI1,PI2,PI3,PI4,PI5,PI6,PI7,PI8,...
+          Q,inputs] = calculo_centroide(t1,t2,t3,t4,t5,t6,t7,t8,k,g)
+    
+      global areas
+      imagen1=imread('NO_GESTURE.jpg');
+    if k>=1 && k<3
+        Q=1;
+        imshow(imagen1);
+        title('LISTO')
+        pause(2)
+    end
+    if k>=3 && k<6
+        Q=2;
+        imshow(imagen1);
+        title('LISTO')
+        pause(2)
+    end
+    if k>=6 && k<9
+        Q=3;
+        imshow(imagen1);
+        title('LISTO')
+        pause(2)
+    end
+    if k>=9 && k<12
+        Q=4;
+        imshow(imagen1);
+        title('LISTO')
+        pause(2)
+    end
+    if k>=12 && k<15
+        Q=5;
+        imshow(imagen1);
+        title('LISTO')
+        pause(2)
+    end
+        FI1=0;
+        FI2=0;
+        FI3=0;
+        FI4=0;
+        FI5=0;
+        FI6=0;
+        FI7=0;
+        FI8=0;
+        WI1=0;
+        WI2=0;
+        WI3=0;
+        WI4=0;
+        WI5=0;
+        WI6=0;
+        WI7=0;
+        WI8=0;
+        WO1=0;
+        WO2=0;
+        WO3=0;
+        WO4=0;
+        WO5=0;
+        WO6=0;
+        WO7=0;
+        WO8=0;
+        OP1=0;
+        OP2=0;
+        OP3=0;
+        OP4=0;
+        OP5=0;
+        OP6=0;
+        OP7=0;
+        OP8=0;
+        PI1=0;
+        PI2=0;
+        PI3=0;
+        PI4=0;
+        PI5=0;
+        PI6=0;
+        PI7=0;
+        PI8=0;
+    areas_gestos=[t1,t2,t3,t4,t5,t6,t7,t8];
+    areas(g,:)=areas_gestos;
+    inputs=0;
+    if k==15
+        Q=0;
+        ar1=mean(areas(7:9,:));
+        FI1=ar1(1);
+        FI2=ar1(2);
+        FI3=ar1(3);
+        FI4=ar1(4);
+        FI5=ar1(5);
+        FI6=ar1(6);
+        FI7=ar1(7);
+        FI8=ar1(8);
+        ar2=mean(areas(1:3,:));
+        WI1=ar2(1);
+        WI2=ar2(2);
+        WI3=ar2(3);
+        WI4=ar2(4);
+        WI5=ar2(5);
+        WI6=ar2(6);
+        WI7=ar2(7);
+        WI8=ar2(8);
+        ar3=mean(areas(4:6,:));
+        WO1=ar3(1);
+        WO2=ar3(2);
+        WO3=ar3(3);
+        WO4=ar3(4);
+        WO5=ar3(5);
+        WO6=ar3(6);
+        WO7=ar3(7);
+        WO8=ar3(8);
+        ar4=mean(areas(10:12,:));
+        OP1=ar4(1);
+        OP2=ar4(2);
+        OP3=ar4(3);
+        OP4=ar4(4);
+        OP5=ar4(5);
+        OP6=ar4(6);
+        OP7=ar4(7);
+        OP8=ar4(8);
+        ar5=mean(areas(13:15,:));
+        PI1=ar5(1);
+        PI2=ar5(2);
+        PI3=ar5(3);
+        PI4=ar5(4);
+        PI5=ar5(5);
+        PI6=ar5(6);
+        PI7=ar5(7);
+        PI8=ar5(8);
+        imshow(imagen1);
+        title('LISTO')
+        pause(2)
+        title('     ')
+        inputs=areas;
+    end
+end
+
